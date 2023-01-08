@@ -106,7 +106,7 @@ if Settings["Type"]:lower() == "whisper" then
     for i,v in pairs(Players:GetChildren()) do
         if v ~= Players.LocalPlayer and Settings["Enabled"] then
             if v ~= nil and v:FindFirstChild("leaderstats") then
-                if v.leaderstats.Raised.Value > 500 or v.leaderstats.Donated.Value > 500 then
+                if v.leaderstats:WaitForChild("Raised").Value > 500 or v.leaderstats:WaitForChild("Donated").Value > 500 then
                     Say("/w "..v.Name.." "..Settings["Message"])
                     task.wait(Settings["Cooldown"])
                 end
